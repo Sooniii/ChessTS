@@ -9,11 +9,10 @@
   "scripts": {
     "build": "tsc",
     "build:dev": "tsc -w",
-    "build:tsc": "tsc",
     "dev": "tsc-watch --onSuccess \"npm start\"",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "test": "vitest",
+    "start": "node dist/index.js",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
