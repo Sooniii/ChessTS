@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "es2018",
-    "module": "esnext",
+    "module": "CommonJS",
     "lib": ["esnext"],
     "moduleResolution": "node",
     "esModuleInterop": true,
@@ -11,7 +11,7 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "rootDir": "src",
-    "outDir": "dist"
+    "outDir": "dist",
   },
   "include": ["./src/**/*"]
 }
