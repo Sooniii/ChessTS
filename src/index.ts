@@ -1,1 +1,3 @@
-console.log('welcome')
+import { initBankTest } from './bank-test'
+
+initBankTest()
