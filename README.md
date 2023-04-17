@@ -44,3 +44,7 @@ MONGO_DB_NAME=test_auth_api
 ```
 
 Vous pourrez acceder aux variables d'environnement via `process.env.MONGO_URI` par exemple.
+
+Dans index.ts importez dotenv, et sa fonction `config`
+Appelez config avant tout.
+(voir index.ts)
