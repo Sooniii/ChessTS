@@ -1,10 +1,10 @@
 
 function loadDb() {
-  return import('./demo-express-modules/db').then(({ initMongoDb }) => initMongoDb)
+  return import('./demo-express-modules/db').then(({ initMongoDb }) => initMongoDb())
 }
 
 function loadWebserver() {
-  return import('./demo-express-modules/server').then(({ initServer }) => initServer)
+  return import('./demo-express-modules/server').then(({ initServer }) => initServer())
 }
 
 function handleError(err: unknown, origin?: NodeJS.UncaughtExceptionOrigin) {
