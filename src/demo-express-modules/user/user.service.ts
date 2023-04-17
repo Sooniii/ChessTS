@@ -1,7 +1,7 @@
-import { IUserRegisterBody } from './user.interface';
+import { IUserLoginBody, IUserRegisterBody } from './user.interface';
 
 
-export function login(email: string, password: string) {
+export function login(userData: IUserLoginBody) {
   // return a JWT token
 }
 

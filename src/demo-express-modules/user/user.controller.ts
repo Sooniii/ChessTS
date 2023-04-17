@@ -1,18 +1,29 @@
 import { Request, Response } from 'express';
+import { login, register } from './user.service';
 
 export function getMe(req: Request, res: Response) {
 
   res.json({ hello: 'World' })
 }
 
-export function postRegister(req: Request, res: Response) {
+export async function postRegister(req: Request, res: Response) {
   const { body } = req;
 
-  res.json({ hello: 'World', body })
+  try {
+    await register(body)
+    res.json({ success: true })
+  }
+  catch (err) {
+    res.status(400).json({ error: 'cannot create user' })
+  }
+
 }
 
-export function postLogin(req: Request, res: Response) {
+export async function postLogin(req: Request, res: Response) {
   const { body } = req;
 
-  res.json({ hello: 'World', body })
+  const token = await login(body)
+  // do something with token ?
+
+  res.json({ token })
 }
