@@ -1,4 +1,4 @@
-import { initServer } from './demo-express/server'
+import { initServer } from './demo-express-modules/server'
 // import axios from 'axios'
 
 console.log('Welcome on DEMO')
