@@ -7,19 +7,25 @@ function loadWebserver() {
   return import('./demo-express-modules/server').then(({ initServer }) => initServer)
 }
 
-import('dotenv/config').then(() => {
-  loadDb()
-  .then(() => {
-    loadWebserver()
-  })
-  .catch(err => {
-    if (err instanceof Error) {
-      console.error('Cannot connect to MongoDB')
-      process.exit(1)
-    }
-  })
-})
+function handleError(err: unknown, origin?: NodeJS.UncaughtExceptionOrigin) {
+  if (origin) {
+    console.error(origin)
+  }
+  if (err instanceof Error) {
+    console.error(err.message)
+  } else {
+    console.error(err)
+  }
+  process.exit(1)
+}
 
+import('dotenv/config').then(
+  () => loadDb().then(
+    () => loadWebserver()
+  ).catch(handleError)
+).catch(handleError)
+
+process.addListener('uncaughtException', handleError)
 
 
 
