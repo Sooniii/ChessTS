@@ -1,14 +1,16 @@
-import { config } from 'dotenv'
-import { initMongoDb } from './demo-express-modules/db'
-import { initServer } from './demo-express-modules/server'
-config()
-// import axios from 'axios'
 
-console.log('Welcome on DEMO')
+function loadDb() {
+  return import('./demo-express-modules/db').then(({ initMongoDb }) => initMongoDb)
+}
 
-initMongoDb()
+function loadWebserver() {
+  return import('./demo-express-modules/server').then(({ initServer }) => initServer)
+}
+
+import('dotenv/config').then(() => {
+  loadDb()
   .then(() => {
-    initServer()
+    loadWebserver()
   })
   .catch(err => {
     if (err instanceof Error) {
@@ -16,6 +18,9 @@ initMongoDb()
       process.exit(1)
     }
   })
+})
+
+
 
 
 
