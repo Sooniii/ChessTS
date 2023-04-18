@@ -11,7 +11,7 @@ async function doStuffWithMongo() {
   const UserCollection = mongo.db!.collection<User>('users')
 
   // trouve tous les users avec un age >= 18
-  const allUsersData = await UserCollection.find({ age: { $gte: 18 } })
+  const allUsersData = await UserCollection.find({ age: { $gte: 18 } }).toArray()
 
   // trouve un utilisateur avec une adresse email
   const oneUser = await UserCollection.findOne({ email: 'test@test.com' })
