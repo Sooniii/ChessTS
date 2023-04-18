@@ -1,4 +1,4 @@
-import { ajv } from '../common/ajv';
+import { ajv } from '../common/utils/ajv';
 import {JSONSchemaType} from 'ajv'
 import { IUserLoginBody, IUserRegisterBody } from './user.interface';
 
