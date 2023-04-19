@@ -11,5 +11,6 @@ module.exports = {
         allowTemplateLiterals: true,
       },
     ],
+    'no-console': 'off',
   },
 }

@@ -1,6 +1,3 @@
-import { initServer } from './demo-express/server'
+import { initBankTest } from './bank-test'
 
-console.log('Welcome on DEMO')
-
-// start express demo :
-initServer()
+initBankTest()
