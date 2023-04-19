@@ -2,10 +2,10 @@
   "name": "ts",
   "version": "1.0.0",
   "description": "",
-  "main": ".eslintrc.js",
-  "keywords": [],
   "author": "",
   "license": "ISC",
+  "keywords": [],
+  "main": ".eslintrc.js",
   "scripts": {
     "build": "tsc",
     "build:dev": "tsc -w",

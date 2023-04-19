@@ -7,5 +7,5 @@
   "files.insertFinalNewline": true,
   "editor.tabSize": 2,
   "editor.detectIndentation": false,
-  "typescript.preferences.quoteStyle": "single",
+  "typescript.preferences.quoteStyle": "single"
 }
