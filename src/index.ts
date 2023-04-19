@@ -1,6 +1,6 @@
 
 function loadDb() {
-  return import('./demo-express-modules/db').then(({ initMongoDb }) => initMongoDb())
+  return import('./demo-express-modules/common/db').then(({ mongo }) => mongo.initMongoDb())
 }
 
 function loadWebserver() {

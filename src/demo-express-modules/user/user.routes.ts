@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { validateBody } from '../common/validate-body';
+import { validateBody } from '../common/middlewares/validate-body';
 import { validateUserRegister } from './user.validator';
 import { getMe, postLogin, postRegister } from './user.controller';
 
