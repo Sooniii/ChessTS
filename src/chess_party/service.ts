@@ -8,18 +8,18 @@ export async function findAllParty() {
   return partyList
 }
 
-export async function getOnePartyByUser(user:User) {
+export async function findOnePartyByUser(user:string) {
   const PartyCollection = mongo.db?.collection<Party>("party")
   const party = PartyCollection?.findOne({player1: user})
   return party
 }
 
-export async function createParty(player1: User){
+export async function createParty(player1: string){
   const PartyCollection = mongo.db?.collection<Party>("party")
   PartyCollection?.insertOne(
     {
       player1: player1,
-      player2: null,
+      player2: "",
       cashprize: 0
     }
   )
