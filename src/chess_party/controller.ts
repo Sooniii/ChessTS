@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { findAllParty } from './service'
+import { findAllParty, findOnePartyByUser } from './service'
 
 export async function getAllParty(req: Request, res: Response) {
   try {
@@ -8,4 +8,17 @@ export async function getAllParty(req: Request, res: Response) {
   }catch(err){
     res.status(201)
   }
+}
+
+export async function getOneParty(req: Request, res: Response){
+  try{
+    const party = await findOnePartyByUser(req.params.username);
+    res.status(200).json({party: party})
+  }catch(err){
+    res.status(201)
+  }
+}
+
+export async function addNewParty(req: Request, res: Response) {
+  
 }
