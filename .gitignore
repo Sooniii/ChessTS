@@ -3,3 +3,4 @@ dist/
 dist-tsc/
 
 .env
+yarn.lock
