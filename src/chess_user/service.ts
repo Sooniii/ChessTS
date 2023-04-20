@@ -4,8 +4,6 @@ import { User, UserLoginBody } from './user';
 
   export async function getOneUserByUserName(loginbody: UserLoginBody){
     const UserCollection = mongo.db?.collection<User>('users')
-    console.log("req", loginbody)
-    console.log("collection", UserCollection)
     const user = await UserCollection?.findOne({email: loginbody.email, password: loginbody.password})
     return user
   }

@@ -1,5 +1,4 @@
 import { Request, Response } from 'express';
-import ResponseCache from 'next/dist/server/response-cache';
 import { User, UserLoginBody } from './user';
 import { getOneUserByUserName, addNewUser, modifyUserPassword } from './service'
 import { handleClientScriptLoad } from 'next/script';
@@ -13,8 +12,6 @@ import { handleClientScriptLoad } from 'next/script';
     }catch(err){
       res.status(400).json({error: err})
     }
-    
-    
   }
 
   export async function registerNewUser(req: Request, res: Response){
