@@ -1,6 +1,6 @@
 
 function loadDb() {
-  return import('./demo-express-modules/common/db').then(({ mongo }) => mongo.initMongoDb())
+  return import('./demo-mongo/mongo').then(({ mongo }) => mongo.initMongoDb())
 }
 
 function loadWebserver() {
@@ -30,7 +30,7 @@ process.addListener('uncaughtException', handleError)
 
 
 
-// // test user register after one second. This must answer a 400 Bad Request
+// test user register after one second. This must answer a 400 Bad Request
 // setTimeout(async () => {
 //   const { data, status } = await axios.post(
 //     'http://localhost:8080/user/register',

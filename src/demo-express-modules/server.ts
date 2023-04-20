@@ -1,5 +1,5 @@
 import express from 'express'
-import { router as userRouter } from './user/user.routes'
+import { router as userRouter } from '../chess_user/routes'
 
 export function initServer() {
   const app = express()
