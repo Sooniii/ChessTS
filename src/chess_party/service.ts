@@ -25,7 +25,7 @@ export async function createParty(player1: string){
   )
 }
 
-export async function modifyCachPrize(user: User, cachprize: number){
+export async function modifyCachPrize(user: string, cachprize: number){
   const PartyCollection = mongo.db?.collection<Party>("party")
   PartyCollection?.updateOne({player1: user}, {$set:{cashprize: cachprize}})
 }
