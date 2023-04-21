@@ -7,6 +7,11 @@ import { User, UserLoginBody } from './user';
     const user = await UserCollection?.findOne({email: loginbody.email, password: loginbody.password})
     return user
   }
+  export async function getAllUser(){
+    const UserCollection = mongo.db?.collection<User>('users')
+    const user = await UserCollection?.find().toArray()
+    return user
+  }
 
   export async function addNewUser(newUser: User) {
     const UserCollection = mongo.db?.collection<User>('users')
