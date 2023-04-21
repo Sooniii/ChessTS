@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import { User, UserLoginBody } from './user';
 import { getOneUserByUserName, addNewUser, modifyUserPassword, getAllUser } from './service'
-import { handleClientScriptLoad } from 'next/script';
+
 
 
   export async function getLoginUser(req: Request, res: Response){
