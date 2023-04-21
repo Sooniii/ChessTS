@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import { User, UserLoginBody } from './user';
-import { getOneUserByUserName, addNewUser, modifyUserPassword } from './service'
+import { getOneUserByUserName, addNewUser, modifyUserPassword, getAllUser } from './service'
 import { handleClientScriptLoad } from 'next/script';
 
 
@@ -21,8 +21,15 @@ import { handleClientScriptLoad } from 'next/script';
     }catch(err){
       res.status(201).json({error: err})
     }
-    
-    
+  }
+
+  export async function findAllUser(req: Request, res: Response) {
+    try{
+      const users = await getAllUser();
+      res.status(200).json({users: users})
+    }catch(err){
+      res.status(201)
+    }
   }
 
   export function modifyPasswordOfUser(req: Request, res: Response){
