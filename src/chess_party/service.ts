@@ -14,13 +14,14 @@ export async function findOnePartyByUser(user:string) {
   return party
 }
 
-export async function createParty(player1: string){
+export async function createParty(player1: string, board: any){
   const PartyCollection = mongo.db?.collection<Party>("party")
   PartyCollection?.insertOne(
     {
       player1: player1,
       player2: "",
-      cashprize: 0
+      cashprize: 0,
+      board: board
     }
   )
 }
@@ -28,4 +29,9 @@ export async function createParty(player1: string){
 export async function modifyCachPrize(user: string, cachprize: number){
   const PartyCollection = mongo.db?.collection<Party>("party")
   PartyCollection?.updateOne({player1: user}, {$set:{cashprize: cachprize}})
+}
+
+export async function updateBoard(user:string, board: any) {
+  const PartyCollection = mongo.db?.collection<Party>("party")
+  PartyCollection?.updateOne({player1: user}, {$set:{board: board}})
 }
