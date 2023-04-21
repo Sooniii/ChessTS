@@ -1,4 +1,4 @@
-import { mongo } from '../demo-mongo/mongo';
+import { mongo } from '../serverSetup/mongo';
 import { User, UserLoginBody } from './user';
 
 

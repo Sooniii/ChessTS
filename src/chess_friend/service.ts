@@ -1,4 +1,4 @@
-import { mongo } from '../demo-mongo/mongo';
+import { mongo } from '../serverSetup/mongo';
 import { FriendRelation } from './friend';
 
 export async function getAllFriendRelation(userName: string){

@@ -1,5 +1,5 @@
 import { User } from '../chess_user/user';
-import { mongo } from '../demo-mongo/mongo';
+import { mongo } from '../serverSetup/mongo';
 import { Party } from './party';
 
 export async function findAllParty() {
