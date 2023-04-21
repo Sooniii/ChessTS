@@ -1,6 +1,21 @@
 import express from 'express'
 import { router as userRouter } from '../chess_user/routes'
 import { router as friendRouter } from '../chess_friend/routes'
+import cors from 'cors';
+
+const whitelist = ['http://localhost:8080', 'http://localhost:5173', 'http://127.0.0.1:5173']
+
+const corsOptions = {
+  origin: function (origin: any, callback: any) {
+    if (whitelist.indexOf(origin) !== -1 || !origin) {
+      callback(null, true)
+    } else {
+      callback(new Error('Not allowed by CORS'))
+    }
+  }
+}
+
+
 
 export function initServer() {
   const app = express()
@@ -15,6 +30,9 @@ export function initServer() {
   // app.use('/blog', routerBlog)
   app.use('/user', userRouter)
   app.use('/friend', friendRouter)
+
+  app.use(cors(corsOptions))
+  app.options('*', cors(corsOptions))
 
 
   app.listen(8080, () => {
